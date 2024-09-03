@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  dev-database:
+    image: postgres:15.0
+    restart: always
+    container_name: dev-database
+    environment:
+      POSTGRES_USER: haidangphan
+      POSTGRES_PASSWORD: 1234567890
+      POSTGRES_DB: mydatabase
+    ports:
+      - 5432:5432
+    networks:
+      - nest-network
+networks:
+  nest-network:
